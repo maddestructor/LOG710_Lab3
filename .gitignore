@@ -3,3 +3,5 @@
 /.git/
 /*.idea
 /*.xml
+*.o
+/main
