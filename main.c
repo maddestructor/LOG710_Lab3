@@ -39,8 +39,9 @@ int ProcessTask_p3(Process* _this){
 	printf("I'm p3, my pid is %d\n", _this->id);
 
     if(iteration_3 !=0){
-        --iteration_3;
+
         printf("p3: %d iteration(s) remaining\n", iteration_3);
+         --iteration_3;
         return 0;
     }
 
