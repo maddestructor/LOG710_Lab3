@@ -23,7 +23,7 @@ int initInternalProcessList(){
 	{
 	    processes = malloc(sizeof(ProcessList));
 
-		printf("procs is null: initialize it");
+		//printf("procs is null: initialize it");
 		processes->procs = malloc(INITIAL_MAX_PROCESSES_SIZE * sizeof(Process*));
 		processes->size = INITIAL_MAX_PROCESSES_SIZE;
 		processes->count = 0;

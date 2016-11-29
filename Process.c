@@ -14,12 +14,12 @@
 static ProcessList *processes;
 
 int initProcesses(){
-	printf("enter in initProcesses");
+	//printf("enter in initProcesses");
 	if(!processes)
 	{
 	    processes = malloc(sizeof(ProcessList));
 
-		printf("procs is null: initialize it");
+		//printf("procs is null: initialize it");
 		processes->procs = malloc(INITIAL_MAX_PROCESSES_SIZE * sizeof(Process*));
 		processes->size = INITIAL_MAX_PROCESSES_SIZE;
 		processes->count = 0;
@@ -27,7 +27,7 @@ int initProcesses(){
 
 	if(processes->count+1 >= processes->size)
 	{
-		printf("reallocting processes");
+		//printf("reallocting processes\n");
 		int new_size = (INITIAL_MAX_PROCESSES_SIZE + processes->size);
 		processes->procs = realloc(processes->procs,new_size * sizeof(Process*));
 		processes->size = new_size;
@@ -58,10 +58,10 @@ int terminate_emptyTask(Process *_this){
 }
 
 Process* newProcess(){
-	printf("Process: initProcesses");
+	//printf("Process: initProcesses");
 	int ret_initProc = initProcesses();
 	if(ret_initProc != OK)
-			printf("error when init proc(errno: %d)", ret_initProc);
+			printf("error when init proc(errno: %d)\n", ret_initProc);
 	int new_pid = processes->count + 1;
 
 	Process* p = malloc(sizeof(Process));
